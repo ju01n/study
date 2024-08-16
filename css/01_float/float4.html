@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float layout 4</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font:inherit;
+        }
+        body{
+            line-height: 1;
+        }
+        ul{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color:inherit;
+        }
+        img{
+            max-width: 100%;
+            vertical-align: top;
+        }
+
+        .header_top{
+            height: 100px;
+            background: #ccf;
+            position: relative;
+        }
+        .header_top h1{
+            width: 100px;
+            height: 50px;
+            background: #fcf;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .header_top h1 a{
+            display: block;
+            height: 100%;
+        }
+        .header_top .sns{
+            float: left;
+        }
+        .header_top .login{
+            float: right;
+        }
+        .header_bottom{
+            background: #ffc;
+            text-align: center;
+        }
+        .header_bottom ul{
+            overflow: hidden;
+            background: #ccc;
+            display: inline-block;
+            vertical-align: top;
+        }
+        .header_bottom ul li{
+            float: left;
+            line-height: 50px;
+            padding: 0 20px;
+        }
+
+        main{
+            width: 800px;
+            margin: 0 auto;
+        }
+        .top_area{
+            margin-top: 10px;
+            padding: 10px;
+            background: #ccc;
+        }
+        .top_area .top_box{
+            background: #fff;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+
+        .top_area .bottom_box{
+            padding: 10px;
+            background: #fff;
+            overflow: hidden;
+        }
+        .bottom_box .left{
+            overflow: hidden;
+            width: calc(100% - 160px);
+            float: left;
+        }
+        .bottom_box .left li{
+            float: left;
+            height: 100px;
+            background: #fcc;
+            width: calc((100% - 20px) / 3);
+            margin-right: 10px;
+        }
+        .bottom_box .left li:nth-child(3n){
+            margin-right: 0;
+        }
+
+        .bottom_box .left li:nth-child(n+4){
+            margin-top: 10px;
+        }
+        .top_area .right{
+            float: right;
+            width: 150px;
+            height: 210px;
+            background: #fcc;
+        }
+
+        .bottom_area{
+            margin: 10px 0;
+            padding: 10px;
+            background: #fcc;
+        }
+        .bottom_area ul li+li{
+            margin-top: 10px;
+        }
+        .bottom_area ul li a{
+            display: block;
+            overflow: hidden;
+        }
+        .bottom_area ul li img{
+            float: left;
+            height: 150px;
+            width: 150px;
+            object-fit: cover;
+        }
+        .bottom_area ul li p{
+            float: right;
+            height: 150px;
+            width: calc(100% - 160px);
+            background: #fff;
+        }
+        footer{
+            height: 100px;
+            background: #ccc;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header_top">
+            <h1><a href="">로고영역</a></h1>
+            <div class="sns">sns</div>
+            <div class="login">login</div>
+        </div>
+        <div class="header_bottom">
+            <ul>
+                <li>메뉴1</li>
+                <li>메뉴2</li>
+                <li>메뉴3</li>
+                <li>메뉴4</li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <div class="top_area">
+            <div class="top_box">
+                box1
+            </div>
+            <div class="bottom_box">
+                <ul class="left">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                </ul>
+
+                <div class="right">right</div>
+            </div>
+        </div>
+
+        <div class="bottom_area">
+            <ul>
+                <li>
+                    <a href="">
+                        <img src="./img.jpg" alt="">
+                        <p>내용 쓰는 공간</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="./img.jpg" alt="">
+                        <p>내용 쓰는 공간</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="./img.jpg" alt="">
+                        <p>내용 쓰는 공간</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="./img.jpg" alt="">
+                        <p>내용 쓰는 공간</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </main>
+    <footer>footer</footer>
+</body>
+
+</html>

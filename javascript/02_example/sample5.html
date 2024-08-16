@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+        header{
+            position: fixed;
+            top: 0; 
+            left: 0;
+            width: 90%;
+            height: 100px;
+            background: #fcc;
+        }
+        header.on{
+            background: #ccf;
+        }
+
+        .box{
+            height: 2000px;
+            background: #ccc;
+            margin: 10px;
+        }
+        .box.active{
+            background: #888;
+        }
+    </style>
+
+    <header>
+    </header>
+
+    <main>
+        <div class="box"></div>
+        <div class="box active"></div>
+        <div class="box"></div>
+    </main>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $(window).scroll(function(){
+                curr = $(this).scrollTop();
+
+                target = $('.box.active').offset().top;   //target지점까지, 시작지점의 위치를 구함  
+                $('header').html(curr+'////'+target);
+
+                if(curr >= target){
+                    $('header').addClass('on');
+                }
+                else{
+                    $('header').removeClass('on');
+                }
+            })
+        })
+    </script>
+</body>
+</html>

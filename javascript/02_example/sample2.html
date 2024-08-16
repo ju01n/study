@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+        .gnb{
+            display: flex; text-align: center;}
+        .gnb > li{
+            flex: 1;}
+        .gnb > li > a{
+            background: #ccf;
+            display: block;
+            line-height: 50px;
+        }
+        .gnb .sub{
+            display: none;
+        }
+        .gnb .sub a{
+            display: block;
+            line-height: 50px;
+            background: #fcc;
+        }
+    </style>
+
+    <ul class="gnb">
+        <li>
+            <a href="">메뉴1</a>
+            <ul class="sub">
+                <li><a href="">menu1</a></li>
+                <li><a href="">menu1</a></li>
+                <li><a href="">menu1</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="">메뉴2</a>
+            <ul class="sub">
+                <li><a href="">menu2</a></li>
+                <li><a href="">menu2</a></li>
+                <li><a href="">menu2</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="">메뉴3</a>
+            <ul class="sub">
+                <li><a href="">menu3</a></li>
+                <li><a href="">menu3</a></li>
+                <li><a href="">menu3</a></li>
+            </ul>
+        </li>
+    </ul>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            // 마우스 호버 시 전체 메뉴 나와야할 때
+            // $('.gnb > li').hover(function(){
+            //     //올렸을 때
+            //     $('.gnb .sub').stop().slideDown();
+            // },function(){
+            //     //뗐을 때
+            //     $('.gnb .sub').stop().slideUp();
+            // })
+
+
+            //마우스 호버 시 그 하위메뉴만 나와야 할 때
+            $('.gnb > li').hover(function(){
+                //올렸을 때
+                $(this).find('.sub').stop().slideDown();  //.sub 대신 childeren사용가능
+            },function(){
+                //뗐을 때
+                $('.gnb .sub').stop().slideUp();
+            })
+        })
+
+    </script>
+</body>
+</html>

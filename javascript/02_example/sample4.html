@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+        .gnb{}
+        .gnb a{
+            display: block;
+            background: #fcc;
+            line-height: 50px;
+            text-align: center;
+        }
+        .gnb > li > a {
+            background: #000;
+            color:#fcc;
+        }
+        .gnb .sub{
+            display: none;
+        }
+
+    </style>
+
+    <ul class="gnb">
+        <li>
+            <a href="">대메뉴</a>
+            <ul class="sub">
+                <li><a href="">소메뉴1</a></li>
+                <li><a href="">소메뉴1</a></li>
+                <li><a href="">소메뉴1</a></li>
+                <li><a href="">소메뉴1</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="">대메뉴</a>
+            <ul class="sub">
+                <li><a href="">소메뉴1</a></li>
+                <li><a href="">소메뉴1</a></li>
+                <li><a href="">소메뉴1</a></li>
+                <li><a href="">소메뉴1</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="">대메뉴</a>
+            <ul class="sub">
+                <li><a href="">소메뉴1</a></li>
+                <li><a href="">소메뉴1</a></li>
+                <li><a href="">소메뉴1</a></li>
+                <li><a href="">소메뉴1</a></li>
+            </ul>
+        </li>
+    </ul>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $('.gnb > li > a').click(function(e){
+                e.preventDefault();
+                // $('.sub').slideUp()
+                // $(this).siblings().slideDown()
+
+                // $('.sub').slideUp() // 다 닫히고 토글됨
+                // $(this).sibling().slideToggle() //열리고 닫히지는않음 
+
+               if($(this).siblings('.sub').css('display') == 'block'){
+                // console.log('예');
+                $('.sub').slideUp() //전체닫는것 
+               }else{
+                // console.log('아니오');
+                $('.sub').slideUp() 
+                $(this).siblings().slideDown()
+               }
+            })
+            
+        })
+
+    </script>
+</body>
+</html>

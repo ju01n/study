@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study - Javascript</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <style>
+    @charset "utf-8";
+    /* Common */
+    body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0}
+    body,input,textarea,select,button,table{font-family:"IBM Plex Sans KR", "Open Sans",'나눔고딕',NanumGothic,'맑은 고딕','Malgun Gothic','돋움',Dotum,'굴림',Gulim,Helvetica,AppleGothic,sans-serif;font-size:14px;line-height:1.25em}
+    body.s,.s input,.s textarea,.s select,.s button,.s table{font-family:Helvetica}
+    ul,ol{list-style:none}
+    a{color:#000;text-decoration:none}
+    body{position:relative;padding:0 14px;background-color:#fff;color:#000;word-wrap:break-word;-webkit-text-size-adjust:none}
+    header{padding:1em 4em .9em .1em;border-bottom:3px solid #222}
+    h1{width:100%;padding:15px 15px 15px 0}
+    .main_title{font-size:20px}
+    .sc_title{display:block;clear:both;padding:15px 0;font-size:18px}
+    .sec_h a{display:block;margin-top:6px;padding:15px 2px}
+    ul{font-size:14px}
+    li{display:block;border-top:1px solid #ccc}
+    li a{display:block;padding:.7em 31px .6em .1em;font-style:normal}
+    li a:hover{background:#ffe8fce8;text-decoration:none}
+    li span{margin-left:.4em;font-size:.86em;color:#e34ac2}
+    table{table-layout:fixed;border-collapse:separate;border-spacing:0}
+    .new{margin-left:4px;padding:3px;border-radius:3px;vertical-align:middle;background-color:rgb(255, 159, 81);font-size:13px;line-height:12px;color:#fff}
+    .up{padding:3px;border-radius:3px;vertical-align:middle;background-color:rgba(133, 74, 161, 0.686);font-size:13px;line-height:12px;color:#fff}
+    .info{padding:10px}
+    .table_info{min-width:500px;border:1px solid #ccc;border-radius:4px}
+    .table_info th{width:115px;padding:5px 10px;border-bottom:1px solid #ccc;background:rgba(196, 156, 189, 0.1);box-sizing:border-box}
+    .table_info tr:last-child th{border-bottom:none}
+    .table_info td{padding:5px 10px;border-bottom:1px solid #ccc}
+    .table_info td a{display:inline-block;width:100%;height:100%;padding:0;font-weight:700;color:#418eb8;}
+    .table_info tr:last-child td{border-bottom:none}
+    .table_info .tag{padding:1px 3px;border-radius:3px;background-color:#418eb8;color:#fff}
+    .table_info .tag:first-child{margin-left:0}
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script>
+    $(function () {
+      var fr = $('#fr_doc');
+      $('a').on('mouseenter', function () {
+        fr.attr('src', $(this).attr('href'));
+        return false;
+      });
+    });
+  </script>
+</head>
+<body>
+  <header role="banner">
+	  <h1 class="main_title">Study List :: Javascript</h1>
+  </header>
+	<section role="main">
+    <h2 class="sc_title">1. 드림코딩 - 자바스크립트 마스터리</h2>
+		<ul>
+		  <li><a href="#none" target="_blank">추가 예정</a></li>
+		</ul>
+    <h2 class="sc_title">2. 연습문제</h2>
+		<ul>
+		  <li><a href="02_example/sample1.html" target="_blank">01. 메뉴 클릭 동작</a></li>
+		  <li><a href="02_example/sample1-1.html" target="_blank">02. 메뉴 클릭 동작 ver.2</a></li>
+		  <li><a href="02_example/sample2.html" target="_blank">03. 탭 메뉴 -> 목록 노출</a></li>
+		  <li><a href="02_example/sample3.html" target="_blank">04. 탭 메뉴, 내부 컨텐츠 전환</a></li>
+		  <li><a href="02_example/sample4.html" target="_blank">05. 탭 메뉴 -> 하위 소메뉴 노출</a></li>
+		  <li><a href="02_example/sample5.html" target="_blank">06. 스크롤 위치값</a></li>
+		  <li><a href="02_example/menu.html" target="_blank">07. 메뉴 클릭 + 세부 메뉴 노출 효과</a></li>
+		  <li><a href="02_example/todo.html" target="_blank">08. to-do list</a></li>
+		</ul>
+	</section>
+  <div style="position:fixed;top:80px;right:20px;width:900px;height:900px;border:solid #000 1px;background-color:#fff">
+    <iframe id="fr_doc" src="about:blank" style="border:0;width:100%;height:100%"></iframe>
+</div>
+</body>
+</html>

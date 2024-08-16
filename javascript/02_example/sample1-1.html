@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+        .btn-menu{
+            width: 50px;
+            height: 50px;
+            display: block;
+            background: #ff0;
+        }
+        .btn-close{
+            width: 50px;
+            height: 50px;
+            display: block;
+            background: #00f;
+        }
+        .menu{
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #ccc;
+
+            transition: left 0.5s;   /* 트랜지션으로 애니메이트 효과를 줌  */
+        }
+        .menu.active{
+            left: 0;
+        }
+    </style>
+
+
+
+
+    <a href="" class="btn-menu">메뉴</a>
+    <div class="menu">
+        <a href="" class="btn-close">닫기</a>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $('.btn-menu').click(function(e){
+                e.preventDefault(); //링크이동막기
+                $('.menu').addClass('active')
+            })
+
+            $('.btn-close').click(function(e){
+                e.preventDefault();
+                $('.menu').removeClass('active')
+            })
+        })
+
+    </script>
+</body>
+</html>

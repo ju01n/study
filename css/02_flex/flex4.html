@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex - layout4</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font:inherit;
+        }
+        body{
+            line-height: 1;
+        }
+        ul{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color:inherit;
+        }
+        img{
+            max-width: 100%;
+            vertical-align: top;
+        }
+        header .header_top{
+            background: #ccf;
+            height: 200px;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+        }
+        header .header_top h1{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 60px;
+            width: 100px;
+            background: #ff0;
+        }
+        header .header_top h1 a{
+            display: block;
+            height: 100%;
+        }
+
+        .header_bottom{
+            background: #ffc;
+        }
+        .header_bottom ul{
+            display: flex;
+            justify-content: center;
+            flex: 1;
+            
+        }
+        .header_bottom ul li{
+            padding: 0 20px;
+            line-height: 50px;
+            background: #ccc;
+        }
+        main{
+            width: 800px;
+            margin: 10px auto;
+        }
+        .top_box{
+            padding: 10px;
+            background: #ccc;
+        }
+        .top_box .top{
+            background: #fff;
+            height: 200px;
+            margin-bottom: 10px;
+        }
+        .bottom{
+            background: #fff;
+            padding: 10px;
+            display: flex;
+        }
+        .bottom .left{
+            background: #ccf;
+            flex: 1;
+            margin-right: 10px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-content: space-between;
+            height: 300px;
+            display: flex;
+        }
+        .bottom .left li{
+            background: #cfc;
+            width: calc((100% - 20px) / 3);
+            height: calc(50% - 5px);
+        }
+        .bottom .right{
+            background: #cfc;
+            width: 150px;
+        }
+
+        .bottom_box{
+            background: #ccc;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        .bottom_box ul li + li{
+            margin-top: 10px;
+        }
+        .bottom_box ul li a{
+            display: flex;
+        }
+        .bottom_box ul li img{
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+        }
+        .bottom_box ul li p{
+            background: #fff;
+            flex: 1;
+            margin-left: 10px;
+        }
+        footer{
+            height: 100px;
+            background: #cfc;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header_top">
+        <h1><a href="">LOGO</a></h1>
+        <div class="sns">sns</div>
+        <div class="sns">login</div>
+        </div>
+
+        <div class="header_bottom">
+            <ul>
+                <li>메뉴1</li>
+                <li>메뉴2</li>
+                <li>메뉴3</li>
+                <li>메뉴4</li>
+            </ul>
+        </div>
+    </header>
+
+
+    <main>
+        <div class="top_box">
+            <div class="top">
+                top
+            </div>
+
+            <div class="bottom">
+                <ul class="left">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                </ul>
+                <div class="right">right</div>
+            </div>
+        </div>
+
+        <div class="bottom_box">
+            <ul>
+                <li>
+                    <a href="">
+                        <img src="./img.jpg" alt="">
+                        <p>내용 쓰는 공간</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="./img.jpg" alt="">
+                        <p>내용 쓰는 공간</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="./img.jpg" alt="">
+                        <p>내용 쓰는 공간</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="./img.jpg" alt="">
+                        <p>내용 쓰는 공간</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        footer
+    </footer>
+</body>
+
+</html>

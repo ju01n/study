@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float layout 01</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font:inherit;
+        }
+        ul{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color:inherit;
+        }
+        body{
+            background: #ccc;
+        }
+        main{
+            margin: 10px auto;
+            width: 800px;
+        }
+        header{
+            height: 100px;
+            background: #ffc;   
+        }
+        .box1{
+            background: #fff;
+            height: 200px;
+        }
+        .box2{
+            overflow: hidden;
+            margin-top: 10px;
+        }
+        .box2 div{
+            float: left;
+            width: calc((100% - 20px) / 3);
+            height: 100px;
+            background: #fff;
+            margin-right: 10px;
+        }
+        .box2 div:last-child{
+            margin-right: 0;
+        }
+
+        .box3{
+            overflow: hidden;
+            margin-top: 10px;
+        }
+        .box3 div{
+            float: left;
+            width: calc((100% - 40px) / 5);
+            margin-right: 10px;
+            background: #fff;
+            height: 100px;
+        }
+        .box3 div:last-child{
+            margin-right: 0;
+        }
+        .box4{
+            overflow: hidden;
+            margin-top: 10px; 
+            padding: 10px;
+            background: #ccf;
+        }
+        .box4 div{
+            float: left;
+            width: calc((100% - 10px) / 2);
+            margin-right: 10px;
+            background: #fff;
+            height: 100px;
+        }
+        .box4 div:last-child{
+            margin-right: 0;
+        }
+        footer{
+            height: 100px; 
+            background: #ffc;
+        }
+    </style>
+</head>
+<body>
+    <header>header</header>
+    <main>
+        <div class="box1">box1</div>
+        <div class="box2">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="box3">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+        <div class="box4">
+            <div>1</div>
+            <div>2</div>
+        </div>
+    </main>
+    <footer>
+        footer
+    </footer>
+</body>
+</html>

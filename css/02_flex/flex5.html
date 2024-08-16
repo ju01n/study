@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex - layout5</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font:inherit;
+        }
+        body{
+            line-height: 1;
+        }
+        ul{
+            list-style:none;
+        }
+        a{
+            text-decoration: none;
+            color:inherit;
+        }
+        img{
+            vertical-align: top;
+            max-width: 100%;
+        }
+
+        header{
+            height: 100px;
+            background: #ccf;
+        }
+        .inner{
+            width: 800px;
+            margin: 0 auto;
+        }
+        .box1{
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        .box1 div{
+            height: 200px;
+            background: #ccc;
+            width: calc(50% - 5px);
+        }
+        .box1 div:last-child{
+            position: relative;
+        }
+        
+        .box1 .btn{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: #ffc;
+            top: 50%;
+            transform: translatey(-50%);
+
+        }
+        .box1 .btn.prev{
+            left: 10px
+        }
+        .box1 .btn.next{
+            right: 10px;
+        }
+
+        .bar{
+            height: 100px;
+            background: #cc0;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .box2{
+            padding: 10px;
+            background: #ccc;
+        }
+        .box2 .list1{
+            padding: 10px;
+            background: #fff;
+            display: flex;
+            justify-content: space-between;
+            }
+
+        .box2 .list1 div{
+            height: 100px;
+            width: calc(80% - 5px);
+            background: #ccf;
+        }
+        .box2 .list1 div:last-child{
+            width: calc(20% - 5px);
+        }
+        .box2 .list2{
+            padding: 10px;
+            background: #fff;
+            display: flex;
+            justify-content: space-between;
+            padding-top: 0;
+        }
+        .box2 .list2 div{
+            height: 100px;
+            width : calc(30% - 5px);
+            background: #ccf;
+        }
+        .box2 .list2 div:last-child{
+            width: calc(70% - 5px);
+        }
+
+        .box3{
+            margin: 10px 0;
+            background: #cfc;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .box3 .title{
+            line-height: 50px;
+        }
+
+        .box3 .navi a{
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: #fff;
+        }
+
+        .box4{
+            width: 800px;
+            margin-bottom: 10px;
+        }
+        .box4 ul{
+            display: flex;
+            flex: 1;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .box4 ul li{
+            width:calc((100% - 30px) / 4);
+        }
+        .box4 ul li a{
+            padding: 10px;
+            background: #fcc;
+            display: block;
+        }
+        .box4 ul li img{
+            width: 100%;
+            object-fit: cover;
+        }
+        .box4 ul li strong{
+            background: #fff;
+            display: block;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .box4 ul li p{
+            background: #fff;
+            padding: 10px;
+        }
+
+        footer{
+            height: 100px;
+            background: #cfc;
+        }
+    </style>
+</head>
+<body>
+    <header>header</header>
+    <main>
+        <div class="inner">
+            <div class="box1">
+                <div>left</div>
+                <div>right
+                    <a href="" class="btn prev">이전</a>
+                    <a href="" class="btn next">다음</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="bar">BAR</div>
+
+        <div class="inner">
+            <div class="box2">
+                <div class="list1">
+                    <div>80%</div>
+                    <div>20%</div>
+                </div>
+                <div class="list2">
+                    <div>30%</div>
+                    <div>70%</div>
+                </div>
+            </div>
+       
+
+        <div class="box3">
+            <a href="" class="title">공 지 사 항</a>
+            <div class="navi">
+                <a href="">이전</a>
+                <a href="">다음</a>
+            </div>
+        </div>
+
+        <div class="box4">
+            <ul>
+                <li>
+                    <a href="">
+                        <img src="./img.jpg" alt="">
+                        <strong>제목</strong>
+                        <p>내용 작성</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="./img.jpg" alt="">
+                        <strong>제목</strong>
+                        <p>내용 작성</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="./img.jpg" alt="">
+                        <strong>제목</strong>
+                        <p>내용 작성</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="./img.jpg" alt="">
+                        <strong>제목</strong>
+                        <p>내용 작성</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="./img.jpg" alt="">
+                        <strong>제목</strong>
+                        <p>내용 작성</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="./img.jpg" alt="">
+                        <strong>제목</strong>
+                        <p>내용 작성</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="./img.jpg" alt="">
+                        <strong>제목</strong>
+                        <p>내용 작성</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="./img.jpg" alt="">
+                        <strong>제목</strong>
+                        <p>내용 작성</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    </main>
+
+    <footer>footer</footer>
+</body>
+</html>

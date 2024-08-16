@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float layout 03</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font: inherit;
+        }
+
+        body {
+            line-height: 1;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            vertical-align: top;
+        }
+
+        header {
+            height: 100px;
+            background: #ccc;
+            position: relative;
+        }
+
+        header h1 {
+            width: 100px;
+            height: 50px;
+            background: #cff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+        }
+
+        header h1 a {
+            display: block;
+            height: 100%;
+        }
+
+        header .sns {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        header .login {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        /* box1 영역*/
+        .box1 {
+            height: 400px;
+            background: #ccf;
+            position: relative;
+        }
+
+        .box1 .btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: #fcf;
+        }
+
+        .box1 .btn.prev {
+            left: 10px;
+        }
+
+        .box1 .btn.next {
+            right: 10px;
+        }
+
+        .box1 .page {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .box1 .page .active {
+            background: #f0f;
+        }
+
+        .box1 span {
+            float: left;
+            width: 30px;
+            height: 30px;
+            background: #fff;
+            margin: 0 5px;
+            border-radius: 50%;
+        }
+
+        .box2 {
+            padding: 100px;
+
+        }
+
+        .box2 h2 {
+            text-align: center;
+            font-size: 50px;
+            font-weight: bold;
+            margin-bottom: 100px;
+        }
+
+        .box2 ul {
+            overflow: hidden;
+            width: 800px;
+            margin: 0 auto;
+        }
+
+        .box2 ul li {
+            float: left;
+            width: calc((100% - 20px) / 3);
+            margin-right: 10px;
+        }
+
+        .box2 ul li:last-child {
+            margin-right: 0;
+        }
+
+        .box2 ul li a {
+            display: block;
+            padding: 10px;
+            background: #fcc;
+        }
+
+        .box2 ul li img {
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .box2 ul li p {
+            padding: 10px;
+            margin-top: 10px;
+            background: #fff;
+        }
+
+        .box3{
+            padding: 100px 0;
+            background: #ccc;
+        }
+        .box3 ul{
+            width: 800px;
+            margin: 0 auto;
+        }
+        .box3 ul li{
+            height: 100px;
+            background: #fff;
+            margin-bottom: 10px;
+        }
+        .box3 ul li:last-child{
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><a href="">로고</a></h1>
+        <div class="sns">sns</div>
+        <div class="login">login</div>
+    </header>
+
+    <main>
+        <section class="box1">
+            <a href="" class="btn prev">이전</a>
+            <a href="" class="btn next">다음</a>
+            <div class="page">
+                <span class="active">1</span>
+                <span>2</span>
+                <span>3</span>
+            </div>
+        </section>
+
+        <section class="box2">
+            <h2>영역에 대한 내용</h2>
+            <ul>
+                <li>
+                    <a href="">
+                        <img src="./img.jpg" alt="">
+                        <p>내용 입력 공간</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="./img.jpg" alt="">
+                        <p>내용 입력 공간</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="./img.jpg" alt="">
+                        <p>내용 입력 공간</p>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="box3">
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        </section>
+    </main>
+    <footer></footer>
+</body>
+
+</html>

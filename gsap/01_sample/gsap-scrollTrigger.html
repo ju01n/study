@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            height: 5000px;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            height: 50vh;
+            background: #ccc;
+            margin: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .img-box{
+            width: 500px;
+            height: 500px;
+            overflow: hidden;
+        }
+        .img-box img{
+            width: 100%;
+            height: 120%;
+            object-fit: cover;
+        }
+    </style>
+    <div class="img-box">
+        <img src="https://www.apple.com/v/airpods-max/e/images/overview/design_comfort__f5gwnm9e6ci2_large.jpg" alt="">
+    </div>
+    <div class="img-box">
+        <img src="https://www.apple.com/v/airpods-max/e/images/overview/design_comfort__f5gwnm9e6ci2_large.jpg" alt="">
+    </div>
+    <div class="img-box">
+        <img src="https://www.apple.com/v/airpods-max/e/images/overview/design_comfort__f5gwnm9e6ci2_large.jpg" alt="">
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+
+<script>
+
+    const imgList = document.querySelectorAll('img');
+    imgList.forEach(element => {
+    gsap.to(element,{
+        scrollTrigger:{
+            trigger:element.parentElement,
+            start:"0% 100%", //윈도우 기준 80 - 이미 실행되었따. 
+            end:"bottom top",
+            markers:true,
+            scrub:1,
+        },
+        y:-30
+    })
+        });
+</script>
+</body>
+</html>

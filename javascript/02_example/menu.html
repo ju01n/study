@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+        .menu{
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .menu li{
+            font-size: 30px;
+        }
+        .btn-close{
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="" class="btn-menu">메뉴</a>
+
+    <div class="menu">
+        <a href="" class="btn-close">닫기</a>
+        <ul class="gnb">
+            <li><a href="">메뉴1</a></li>
+            <li><a href="">메뉴2</a></li>
+            <li><a href="">메뉴3</a></li>
+            <li><a href="">메뉴4</a></li>
+        </ul>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    const menu = gsap.timeline({})
+    menu.pause();
+    menu.to('.menu',{left:0,})
+    .from('.menu li',{
+        opacity :0,
+            y : 50,
+            stagger : 0.1
+    })
+
+    $('.btn-menu').click(function(e){
+        e.preventDefault();
+        menu.restart();
+        })
+
+        $('.btn-close').click(function(e){
+            e.preventDefault();
+            menu.reverse();
+        })
+</script>
+</body>
+</html>

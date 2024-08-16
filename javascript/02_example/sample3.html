@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+        .tab-list{
+            display: flex;
+            text-align: center;
+           
+        }
+        .tab-list .tab-item{
+            flex: 1;
+            line-height: 50px;
+            background: #ffc;
+        }
+        .tab-list .tab-item.active{
+            background: #ccc;
+        }
+
+        .tab-cont{}
+        .tab-cont .content{
+            display: none;
+        }
+        .tab-cont .content.active{
+            display: block;
+            background: #fcc;
+            padding: 50px;
+        }
+    </style>
+
+    <div class="tab-list">
+        <a href="#detail" class="tab-item active">디테일</a>
+        <a href="#review" class="tab-item">리뷰(20)</a>
+        <a href="#qna" class="tab-item">문의</a>
+    </div>
+
+    <div class="tab-cont">
+        <div id="detail" class="content active">디테일 내용</div>
+        <div id="review" class="content">리뷰 내용</div>
+        <div id="qna" class="content">문의 내용</div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $('.tab-list .tab-item').click(function(e){
+                e.preventDefault();   //a링크로 이동되는 것 막음 
+                target = $(this).attr('href');   //href의 값을 가져와 대입
+                $(this).addClass('active').siblings().removeClass('active');
+                $(target).addClass('active').siblings().removeClass('active');
+            })
+        })
+    </script>
+</body>
+</html>
