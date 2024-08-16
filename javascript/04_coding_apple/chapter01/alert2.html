@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>lecture 02</title>
+</head>
+<style>
+  body{
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  .alert_box{
+    background: skyblue;
+    padding: 20px;
+    color:#fff;
+    border-radius: 5px;
+    display: none;
+  }
+</style>
+<body>
+  <div class="alert_box" id="alert">알림창
+    <button onclick="알림창열기('none')">닫기</button>
+  </div>
+
+  <button onclick="알림창열기('block')">버튼</button>
+
+  <script>
+    function 알림창열기(구멍){ 
+      document.getElementById('alert').style.display = '구멍';
+    }
+//예시2
+    function plus(){
+      2 + 1
+    }
+    function plus2(){
+      2 + 2
+    }
+    function plus3(){
+      2 + 3
+    }
+// 비슷한 함수를 여러개 만들 필요 없다
+
+function plus(구멍){
+  2 + 구멍
+}
+plus(1); //plus함수 안에 1집어 넣어서 실행 
+plus(2);
+plus(3);
+//가변적인 부분에 구멍만 잘 뚫어놓으면 자유자재로 사용 가능 
+
+
+//파라미터 여러개도 쓸 수 있음! 
+function 알림창열기(구멍, 구멍2){
+  document.getElementById('구멍2').style.display = '구멍';
+}
+
+알림창열기 ('ㄴㅇㄹ','ㄴㅇㄹ')
+
+
+    // 알림창열기('안녕');//구멍자리에 안녕  넣어서 알림창 열기 안의 코드 실행해주세요
+    // 알림창열기('바보'); //구멍자리에 바보 넣어서 알림창 열기 안의 코드 실행해주세요
+    //문자는 '' 안에! 
+
+    알림창열기('block'); //알림창이 열림
+    알림창열기('none'); //알림창이 닫힘 
+
+
+    //그래서 구멍은 어디에 쓰는건데?
+    //전에는 기능을 2개 만들려고 함수를 2개를 썼다.
+    //함수 1개로 2종류 코드 실행 가능! 
+    //비슷한 기능을 가진 함수들이 여러개 필요할 때  -> 가변적인 부분을 구멍을 뚫어보자
+    //구멍 => 파라미터 parameter (필수 문법은 아니다)
+    
+    // function 알림창닫기(){
+    //   document.getElementById('alert').style.display = 'none';
+    // }
+  </script>
+
+</body>
+</html>

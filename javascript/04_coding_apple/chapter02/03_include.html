@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>정규식으로 이메일형식 검증해보기</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+      .main-bg{padding: 100px 20px;background: lightgrey;}
+      .alert_box{width: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgb(239, 206, 233); border-radius: 5px; padding: 20px}
+    </style>
+  </head>
+  <body>
+    <!-- 모달창 -->
+    <div class="black-bg">
+      <div class="white-bg alert_box">
+        <h4>로그인하세요</h4>
+        <form action="success.html"> <!--form : 서버로 유저정보 전송-->
+          <div class="my-3">
+            <input type="text" class="form-control" id="email">
+           </div>
+           <div class="my-3">
+             <input type="password" class="form-control" id="password">
+           </div>
+           <button type="submit" class="btn btn-primary" id="btn-submit">전송</button>
+           <button type="button" class="btn btn-danger" id="close">닫기</button>
+        </form> 
+      </div>
+    </div> 
+
+    <!--nav-->
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <span class="navbar-brand">Navbar</span>
+        <button onclick="" class="navbar-toggler" type="button">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav> 
+
+    <div class="main-bg">
+      <h4>Shirts on Sale</h4>
+      <button class="btn btn-danger" id="login">로그인</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <script>
+      //include() : 문자 검사 가능 
+      //정규식쓰면 더 세밀한 문사 검사 가능
+      // /a/.test('검사할 문자')
+
+      //정규식으로 이메일형식 검사하기 
+
+      $('form').on('submit', function(){
+        var 입력한값 = document.getElementById('email').value;
+        if(입력한값 == ''){
+          alert('아이디입력안함');
+        }
+        if(/adfadsf/.test(입력한값)){
+        }
+
+        //과제 - 폼 전송시 비번에 영어 대문자 있는지 여부 
+      })
+
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+  </body>
+</html>

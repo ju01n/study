@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko"> 
+  <!-- 얘의 전체 높이 찾기 -->
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>스크롤이벤트로 만드는 재밌는 기능들</title>
+  <title>setTimeout</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<style>
+  :root{scroll-behavior:auto;}
+  *{margin:0;padding:0;}
+  img{width:50%;height:50%;}
+  .navbar{position:fixed;width:100%;z-index:5;}
+  .main-bg{background:#ccc;height:350px;}
+  .navbar-brand{font-size:30px;transition:all 0.3s;}
+  .container-fluid{height:55px;}
+</style>
+<body>
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <span class="navbar-brand">Navbar</span>
+      <button onclick="" class="navbar-toggler" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav> 
+
+  <div class="main-bg">
+    <h4>Shirts on Sale</h4>
+  </div>
+
+  <div style="height:1000px">
+  </div> 
+
+  <div class="lorem" style="width:200px;height:100px;overflow-y:scroll">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur similique, eligendi repellendus minus nesciunt doloribus optio reiciendis, minima ab error illo provident, doloremque temporibus quibusdam! Quam error ipsa tenetur aperiam?
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    
+    //window.addEventListener('scroll', function(){
+      //window 스크롤이 될때마다 코드를 실행해줌
+      //console.log(window.scrollY);
+    //});
+
+    window.addEventListener('scroll',function(){
+      if(window.scrollY >= 100){
+        document.querySelector('.navbar-brand').style.fontSize = '10px'
+      }else{
+        document.querySelector('.navbar-brand').style.fontSize = '30px'
+      }
+    })
+
+
+    //제이쿼리
+    // $(window).on('scroll',function(){
+    //   $(window).scrollTop(100)
+    // })
+
+    //과제 
+    //div의 스크롤바 내린 양 + 화면에 보이는 div높이 == div의 실제 높이 
+    $('.lorem').on('scroll',function(){
+     var 스크롤양 = document.querySelector('.lorem').scrollTop;
+     var 실제높이 = document.querySelector('.lorem').scrollHeight;
+     var div높이 = document.querySelector('.lorem').clientHeight;
+    //  console.log(스크롤양, 실제높이, div높이);
+     if((스크롤양 + div높이) > 실제높이 - 10){
+      alert('다읽으셨습니다~');
+     }
+    });
+
+
+    //scroll 다룰 때  주의점
+    //1. scroll이벤트리스너 안에 코드는 1초에 60번 실행됨
+    //2. 바닥체크도 여러번 중복으로 할듯 
+
+
+    //Q.현재페이지 끝가지 스크롤 체크는? <body>끝나기 전에 넣는게 관습 
+    document.querySelector('html').scrollHeight
+    // = document.queryElement.scrollHeight
+    document.querySelector('html').clientHeight
+    window.scrollY
+  </script>
+</body>
+</html>

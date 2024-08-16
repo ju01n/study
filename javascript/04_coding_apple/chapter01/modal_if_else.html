@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>menu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+      .main-bg{padding: 100px 20px;background: lightgrey;}
+      .alert_box{width: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgb(239, 206, 233); border-radius: 5px; padding: 20px;display: none;}
+      .is_show{display: block;}
+      .list-group{display:none}
+      .list-group.is_show{display:block;}
+    </style>
+  </head>
+  <body>
+    <!-- 모달창 -->
+    <div class="black-bg">
+      <div class="white-bg alert_box">
+        <h4>로그인하세요</h4>
+        <form action="success.html"> <!--form : 서버로 유저정보 전송-->
+          <div class="my-3">
+            <input type="text" class="form-control" id="email">
+           </div>
+           <div class="my-3">
+             <input type="password" class="form-control" id="password">
+           </div>
+           <button type="submit" class="btn btn-primary" id="btn-submit">전송</button>
+           <button type="button" class="btn btn-danger" id="close">닫기</button>
+        </form> 
+      </div>
+    </div> 
+
+    <!--nav-->
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <span class="navbar-brand">Navbar</span>
+        <button onclick="" class="navbar-toggler" type="button">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav> 
+
+    <ul class="list-group">
+      <li class="list-group-item">1</li>
+      <li class="list-group-item">2</li>
+      <li class="list-group-item">3</li>
+      <li class="list-group-item">4</li>
+      <li class="list-group-item">5</li>
+    </ul>
+
+    <div class="main-bg">
+      <h4>Shirts on Sale</h4>
+      <button class="btn btn-danger" id="login">로그인</button>
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <script>
+      //else if 문법
+      //- 조건식을 연달아 쓰고 싶으면
+      //- 몇번이고 사용 가능
+      if (1 == 3){
+        console.log('맞아요1');
+      } else if (3 == 3){
+        console.log('맞아요2');
+      }
+
+      //윗 조건식과 차이점??
+      if( 1 == 3 ){
+        console.log('맞아요1');
+      }
+      if ( 3 == 3){
+        console.log('맞아요2');
+      }
+
+      //else if : 앞의 조건식이 참이면 뒤에 else문은 실행이 x -> 상황에 따라 성능적으로 이점이 있을 수 있음 
+      //if~ if~ : 앞의 조건식과 상관없이 두번째 if문도 실행 
+
+
+      //조건식에 업그레이드
+      if(1 == 1){ //실은 if문 안엔 ture/false를 넣어야 잘 작동함 : boolean
+        console.log('안녕');
+      }
+      //다름을 비교하고 싶으면 != 
+      //truthy , falsy value
+
+      //조건 2개 이상을 동시에 비교하고 싶다면 && 그리고 || 연산자! 
+      if(1 == 1 && 2 == 2){ 
+        console.log('빠이2');
+      }
+
+
+
+    $('#login').on('click', function(){
+      $('.alert_box').addClass('is_show');
+    });
+
+    // 전송버튼 누르면 저기 input에 입력한 값이 공백이면 알림창 띄워주세요 - 조건문
+    // 조건문 쓰는 법 if(조건){조건이 참일 때 실행할 코드}
+
+    // document.getElementById('email').value; --> input값을 가져올 수 있음
+
+
+    document.getElementById('email').addEventListener('input', function(){ //인쪽 인풋 안에 내용이 변할때 마다 실행해줌 
+      //change이벤트 : input에 입력한 값이 바뀌고 포커스를 잃을 떄 
+      console.log('안녕');
+    });
+
+    $('form').on('submit', function(e){ 
+      // 저기 input에 입력한 값이 공백이면 알림을 띄워주세요
+      if(document.getElementById('email').value == ''){
+        alert('아이디 입력 안하셨어요');
+        e.preventDefault(); //폼 전송을 막기
+      }
+    });
+
+
+
+
+    //과제1 : 비번 입력 칸 공백 검사
+    $('form').on('submit',function(e){
+      e.preventDefault();
+      if(document.getElementById('password').value == ''){
+        alert('비밀번호 입력해주세요!')
+      }
+
+    })
+    //과제2 : 비번이 6자 미만이면 더 길게 입력하라고 안내문 띄우기
+    $('form').on('submit', function(e){
+      e.preventDefault();
+      if(document.getElementById('password').value.length < 6){
+        alert('비밀번호를 더 길게 입력해주세요!');
+      }
+    })
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+  </body>
+</html>

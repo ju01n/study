@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>lecture 02</title>
+</head>
+<style>
+  body{
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  .alert_box{
+    background: skyblue;
+    padding: 20px;
+    color:#fff;
+    border-radius: 5px;
+    display: none;
+  }
+</style>
+<body>
+  <div class="alert_box" id="alert">알림창
+    <button onclick="알림창닫기()">닫기</button>
+  </div>
+
+  <button onclick="알림창열기()">버튼</button>
+
+  <script>
+    function 알림창열기(){ //킨 코드를 작명으로 축약
+      //function 작명은 구체적으로
+      //1. 소문자 시작 2.camelCase
+      //긴 코드 재사용이 편리
+      document.getElementById('alert').style.display = 'block';
+    }
+    function 알림창닫기(){
+      document.getElementById('alert').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
