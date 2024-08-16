@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>내장객체</title>
+</head>
+<body>
+  <h1>window, screen 객체</h1>
+  <h2>현재 브라우저 화면의 크기 (스크롤바와 툴바 미포함)</h2>
+  <h3>innerWidth = <span class="innerWidth">?</span>px</h3>
+  <h3>innerHeight = <span class="innerHeight">?</span>px</h3>
+  <hr>
+  <h3>현재 사용자 모니터 해상도</h3>
+  <h3>screen.width = <span class="width">?</span>px</h3>
+  <h3>screen.height = <span class="height">?</span>px</h3>
+
+
+  <script>
+    // 현재 브라우저 화면의 크기(스크롤바와 툴바 미포함)
+    console.log(`innerWidth = ${window.innerWidth}px`);
+    console.log(`innerHeight = ${window.innerHeight}px`);
+
+    const $innerWidth = document.querySelector('.innerWidth');
+    const $innerHeight = document.querySelector('.innerHeight');
+
+    $innerWidth.textContent = window.innerWidth;
+    $innerHeight.textContent = window.innerHeight;
+
+    // 모니터 해상도 출력
+    const $width = document.querySelector('.width');
+    const $height = document.querySelector('.height');
+
+    $width.textContent = screen.width;
+    $height.textContent = screen.height;
+    
+  </script>
+</body>
+</html>

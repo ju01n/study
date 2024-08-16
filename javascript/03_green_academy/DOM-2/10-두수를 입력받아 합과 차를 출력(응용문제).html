@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>10-두수를 입력받아 합과 차를 출력</title>
+    <style>
+        h1:hover{
+            background-color: #dedede;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        입력받은 두수
+        <span class="x">?</span>,
+        <span class="y">?</span>
+        의 합과 차를 출력
+    </h1>
+
+    <h2>두수의 합 : <span class="sum">?</span></h2>
+
+    <h2>두수의 차(절대값) : <span class="diff">?</span></h2>
+
+    <button>프로그램 실행</button>
+
+    <pre>
+        문제) 버튼을 click하면 사용자로부터 입력받은 두수를 각각 x, y에 저장후
+              두 수의 합과 차를 sum, diff 변수에 할당하여 화면에 출력하시오.
+    </pre>
+
+    <script>
+        const $x = document.querySelector('.x');
+        const $y = document.querySelector('.y');
+
+        const $btn = document.querySelector('button');
+
+        $btn.addEventListener('click', function(){
+            const x = parseInt(prompt('x 값을 입력해 주세요'));
+            const y = parseInt(prompt('y 값을 입력해 주세요'));
+
+            $x.textContent = x;
+            $y.textContent = y;
+
+            const sum = x+y;
+
+            let diff = 0;
+
+            if(x>y){
+                diff = x-y;
+            }else{
+                diff = y-x;
+            }
+
+            document.querySelector('.sum').textContent = sum;
+            document.querySelector('.diff').textContent = diff;
+        });
+    
+    
+        // 문제) h1을 클릭하면 해당 태그의 내용을 콘솔창에 출력하시오.
+        const $h1 = document.querySelector('h1');
+        $h1.addEventListener('click', function(){            
+            console.log($h1.textContent);//h1의 텍스트내용을 가져온다.        
+            console.log(this.textContent);//this는 이벤트의 주체를 가리킨다.
+        });
+        
+    </script>
+</body>
+</html>

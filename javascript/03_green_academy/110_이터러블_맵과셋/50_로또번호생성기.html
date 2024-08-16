@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로또번호생성기</title>
+    <style>
+      #wrap {text-align:center;}
+      button{padding:20px 30px;font-size:24px;}
+      .result{margin-top:30px;}
+      .ball{display:inline-block;width:80px;height:80px;background-color:orange;border-radius:50%;line-height:80px;vertical-align:middle;margin-right:10px;}
+      .ball:last-child{margin-right:0;}
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <h1>로또 1등번호 추출</h1>
+      <button>클릭!</button>
+      <p class="result">
+        <!-- <span class="ball">1</span>
+        <span class="ball">2</span>
+        <span class="ball">3</span>
+        <span class="ball">4</span>
+        <span class="ball">5</span>
+        <span class="ball">6</span> -->
+      </p>
+    </div>
+
+    <script>
+      const $button = document.querySelector('button');
+      const $result = $button.nextElementSibling;
+      $button.addEventListener('click', function(){
+        const lottoPaper = new Set(); // Set이 중복된 값을 허용하지 않기 때문에 Set자료구조 이용
+
+
+        // 숫자가 중복되지 않게 6개의 값을 저장
+        while(true){
+          // 1 ~ 45 사이의 번호를 랜덤하게 추출
+          const ballNum = Math.floor(Math.random() * 45) + 1;
+          lottoPaper.add(ballNum)
+
+          if(lottoPaper.size > 5) break;
+        }
+
+        // 현재 보이고 있는 로또공을 화면에서 제거
+        $result.innerHTML = ``;
+
+        // 동적으로 돔을 생성하여 화면에 출력
+        for(let lottoNum of lottoPaper){
+          const $span = document.createElement('span');
+          $span.setAttribute('class', 'ball');
+          $span.textContent = lottoNum;
+          $result.appendChild($span);
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>60-노드의 동적 생성과 추가</title>
+</head>
+<body>
+  <!-- <h1 name="둘리" address="서초구">안녕, 자바스크립트</h1> -->
+
+  <script>
+    // h1 요소 생성
+    const $h1 = document.createElement('h1');
+
+    // h1에 class 어트리뷰트 추가
+    $h1.setAttribute('name', '둘리');
+
+    // h1에 address 어트리뷰트 추가
+    $h1.setAttribute('address', '서초구');
+
+    // h1에 텍스트 내용 추가
+    $h1.textContent = '안녕, 자바스크립트';
+
+    // h1을 body요소에 마지막 자식으로 추가 (첫번째 자식 - preppend)
+    document.body.appendChild($h1);
+  </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>navigator 객체</h1>
+
+  <h2>platform = <span class="platform">?</span></h2>
+  <h2>appName = <span class="appName">?</span></h2>
+  <h2>userAgent = <span class="userAgent">?</span></h2>
+
+  <script>
+    // 브라우저와 운영체제의 정보를 제공
+    const platform = navigator.platform; // 운영체제
+    const appName = navigator.appName; // 브라우저
+    const userAgent = navigator.userAgent; // 종합정보 (제일많이씀)
+
+    document.querySelector('.platform').textContent = platform;
+    document.querySelector('.appName').textContent = appName;
+    document.querySelector('.userAgent').textContent = userAgent;
+
+  </script>
+</body>
+</html>

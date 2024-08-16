@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>브라우저 이벤트</title>
+  </head>
+  <body>
+    <h1 style="color: blue">인라인 방식의 이벤트처리</h1>
+    
+    <!-- 
+    1. 이벤트 처리는 사용자의 특정 행위에 따라 반응하는 코드를 작성하는 것 
+    2. 이벤트핸들러 - 이벤트가 발생했을 때 실행되는 함수 (예약의 개념)
+  
+  -->
+
+    <button onclick="alert('1등 당첨!!!')" style="display:block">클릭하면 복권당첨 ~!</button>
+    <!-- 아래 img를 클릭했을 때 msgFn 함수를 호출해달라고 예약 -->
+    <!-- 여기서는 msgFn함수가 이벤트핸들러에 해당 -->
+
+    <img onclick="msgFn('웃으면 복이와요!!!');" src="https://bit.ly/3lEMhSF" alt="">
+
+    <script>
+      function msgFn(msg) {
+        alert(msg);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  h1{text-align:center;}
+</style>
+<body>
+  <h1>브라우저에서 사용되는 여러가지 입출력 함수</h1>
+
+  <script>
+    //js에서 문자열은 쌍따옴표, 홑따옴표 모두 사용 가능
+    if(false){
+      alert('오늘은 일요일');
+      alert('열공합시다');
+    }
+
+    if(false){
+      // confirm('오늘 아침 드셨습니까..');
+      //document = <html>
+
+      // confirm()함수는 true, false 중 하나를 return
+      document.wirte(confirm('오늘 아침 드셨습니까..'));
+
+      // document.write()은 body 태그 안에 입력내용을 출력
+    }
+
+    if(false){
+      // prompt()함수는 사용자가 입력한 내용을 '문자열로' 반환
+      document.write(prompt('what is your name?'));
+    }
+
+    console.log('브라우저의 콘솔창에서 메시지 출력 - f12');
+
+  </script>
+</body>
+</html>

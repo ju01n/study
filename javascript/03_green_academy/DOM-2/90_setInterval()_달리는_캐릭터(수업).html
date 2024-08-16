@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>응용문제</title>
+    <style>
+        #wrap{text-align: center;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <h1>달리는 캐릭터</h1>
+
+        <p><img src="./../images/run_1.gif" alt="#"></p>
+
+        <button class="play">달리기</button>
+        <button class="stop">멈추기</button>
+
+    </div>
+    <script>
+        const $img = document.querySelector('img');
+        const $btnPlay = document.querySelector('.play');
+        const $btnStop = document.querySelector('.stop');
+
+        let intervalKey = null;
+
+        //달리기
+        $btnPlay.addEventListener('click', function(){
+
+            let num = 1;
+
+            intervalKey = setInterval(function(){
+
+                if(num<10){
+                    num++;
+                }else{
+                    num=1;
+                }
+
+                $img.setAttribute('src', `./../images/run_${num}.gif`)
+            },50);
+        });
+
+
+        //멈추기
+        $btnStop.addEventListener('click', function(){
+            clearInterval(intervalKey);
+        });
+
+
+    </script>
+</body>
+</html>

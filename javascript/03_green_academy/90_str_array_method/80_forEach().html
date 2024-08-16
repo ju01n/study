@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>배열의 모든 원소에 공통적인 작업을 할 때 유용한 forEach()</h1>
+
+  <pre>
+    배열명.forEach(공통작업함수);
+
+    배열명.forEach(function(item, idx, arr){});
+  </pre>
+
+  <button>확인</button>
+  <script>
+    const arrData = ['둘리', 7, '또치', 8, '도우너', 9];
+    const $btn = document.querySelector('button');
+    $btn.addEventListener('click', function(){
+      arrData.forEach(function(item, idx){
+        console.log(`인덱스 : ${idx}, 원소 : ${item}`);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>응용문제</title>
+    <style>
+        #wrap{text-align: center;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <h1>달리는 캐릭터</h1>
+
+        <p><img src="./../images/run_1.gif" alt="#"></p>
+
+        <button class = "play">달리기</button>
+        <button class = "stop">멈추기</button>
+    </div>
+
+    <script>
+      const $play = document.querySelector('.play');
+      const $stop = document.querySelector('.stop');
+      const $img = document.querySelector('img');
+
+$play.addEventListener('click', function(){
+    let i = 1;
+    const interval = setInterval(function() {
+        $img.src = `./../images/run_${i}.gif`;
+        i++;
+        if(i > 10) {
+            clearInterval(interval);
+        }
+    }, 100);
+});
+
+$stop.addEventListener('click', function(){
+    clearInterval(interval);
+});
+</script>
+</body>
+</html>
+    </script>
+</body>
+</html>

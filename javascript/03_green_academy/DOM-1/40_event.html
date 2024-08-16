@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이벤트구문 작성 연습</title>
+  </head>
+  <body>
+    <h1>이벤트 구문 작성 연습</h1>
+    <p>
+      1. 실무에서 가장 많이 사용하는 이벤트 구문 작성방식
+      DOM선택.addEventListener('이벤트명', 이벤트핸들러);
+    </p>
+
+    <script>
+      // 연습예제) button에 대한 click 이벤트 구문을 작성하시오
+      const $button = document.querySelector('button');
+      $button.addEventListener('click', function () {});
+
+      // 문1) h2에 대한 click 이벤트 구문을 작성하시오.
+      const $h2 = document.querySelector('h2');
+      $h2.addEventListener('click', function(){});
+      // 문2) .gnb>li>a 여러개의 a에 대한 click 이벤트 구문을 작성하시오.
+      const $a = document.querySelectorAll('.gnb li a');
+      $a.addEventListener('click', function(){});
+      // 문3) .btn에 대한 click 이벤트를 작성하시오.
+      const btn = document.querySelector('.btn');
+      btn.addEventListener('click', function(){});
+      // 문4) .frame에 대한 click 이벤트를 작성하시오.
+      const frame = document.querySelector('.frame');
+      frame.addEventListener('click', function(){});
+      // 문5) .pht에 대한 click 이벤트를 작성하시오.
+      const pht = document.querySelector('.pht');
+      pht.addEventListener('click',function(){});
+      // 문6) #tit에 대한 click 이벤트를 작성하시오.
+      const tit = document.querySelector('#tit');
+      tit.addEventListener('click', function(){});
+      // 문7) #pht에 대한 click 이벤트를 작성하시오.
+      const pht2 = document.querySelector('#pht');
+      pht2.addEventListener('click'), function(){};
+    </script>
+  </body>
+</html>

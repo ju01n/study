@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>응용력향상</title>
+  </head>
+  <body>
+    <h1>20_최대값찾기</h1>
+    <pre>
+      문제) prompt() 함수를 이용하여 10개의 수를 입력받아, 그 중에서 가장 큰 수를 출력하시오.
+    </pre>
+
+    <script>
+      // const inNum = [];
+      // let max = 0;
+
+      // for(i = 0; i < 10; i ++){
+      //   inNum[i] = parseInt(prompt(('숫자를 10번 입력하세요')));
+      // }
+
+      // for(i = 0; i < 10; i++){
+      //   if(inNum[i] > max){
+      //     max = inNum[i]
+      //   }
+      // }
+
+      // document.write(max);
+      let max = -Infinity; // 음의 무한대 (최댓값을 자바스크립트에서 가장 작은 수로 설정하는 것..)
+      const nums = []; // 10개의 수를 저장할 배열
+
+      for(let i =0; i < 10; i++){
+        nums[i] = parseInt(prompt(`${i + 1}번째 수를 입력하세요`))
+      }
+      for(let i = 0; i < nums.length; i++ ){
+        if (nums[i] > max) max = nums[i];
+      }
+      // const one = parseInt(prompt('1번째 수를 입력하세요'));
+      // const two = parseInt(prompt('2번째 수를 입력하세요'));
+      // const three = parseInt(prompt('3번째 수를 입력하세요'));
+      // const four = parseInt(prompt('4번째 수를 입력하세요'));
+      // const five = parseInt(prompt('5번째 수를 입력하세요'));
+      // const six = parseInt(prompt('6번째 수를 입력하세요'));
+      // const seven = parseInt(prompt('7번째 수를 입력하세요'));
+      // const eight = parseInt(prompt('8번째 수를 입력하세요'));
+      // const nine = parseInt(prompt('9번째 수를 입력하세요'));
+      // const ten = parseInt(prompt('10번째 수를 입력하세요'));
+      
+      // if(one > max)max = one; // 실행 구문이 한 줄이면 {} 생략 가능 
+      // if(two > max)max = two;
+      // if(three > max)max = three;
+      // if(four > max)max = four;
+      // if(five > max)max = five;
+      // if(six > max)max = six;
+      // if(seven > max)max = seven;
+      // if(eight > max)max = eight;
+      // if(nine > max)max = nine;
+      // if(ten > max)max = ten;
+
+      alert(`최댓값은 ${max}`)
+    </script>
+  </body>
+</html>

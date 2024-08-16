@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>내장객체</title>
+</head>
+<body>
+  <h1>location 객체</h1>
+  <p>
+    <button>새로고침</button>
+    <button>href 속성으로 페이지 이동</button>
+    <button>replace() 로 페이지 이동</button>
+  </p>
+
+  <script>
+    // 문제1) h1 DOM을 선택하여 $h1 변수에 저장하세요
+    const $h1 = document.querySelector('h1');
+
+    // h1을 클릭했을 때 내용을 '로케이션 객체'로 변경하세요.
+  $h1.addEventListener('click',function(){
+    $h1.textContent = '로케이션 객체';
+  });
+
+  // 현재페이지 새로고침
+  // 문제) 첫번째 버튼을 선택하여 $btnReload 변수에 저장하고, click이벤트 구문을 작성하시오
+  const $btnReload = document.querySelector('button:first-child');
+  $btnReload.addEventListener('click',function(){
+    location.reload(); // 현재 문서를 다시 불러온다. 
+  });
+
+  // location.href 속성을 사용해서 페이지 이동
+  // 문제) 두번째 버튼을 $btnHref 변수에 저장하고, click 이벤트 구문 작성하시오
+  const $btnHref = document.querySelector('button:nth-child(2)');
+  $btnHref.addEventListener('click', function(){
+    location.href = 'http://k-dokdo.com'
+  });
+
+  // location.replace() 사용해서 페이지 이동
+  // 현재페이지를 새로운 페이지로 덮어 씌우는 개념이므로 기록이 남지 않음
+  const $btnReplace = document.querySelector('button:last-child');
+  $btnReplace.addEventListener('click', function(){
+    location.replace('http://kakao.com')
+  })
+
+  // https://developer.mozilla.org/ko/docs/Web/API/Location
+  
+  </script>
+</body>
+</html>

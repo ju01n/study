@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>빌트인객체</title>
+</head>
+<body>
+  <h1>여러가지 기본 생성자 함수</h1>
+
+  <pre>
+    Number()
+    String()
+    Boolean()
+    Array() <!--배열-->
+    function(); <!--함수-->
+    Date(); <!--날짜, 시간정보 제공-->
+  </pre>
+  <hr>
+  
+  <script>
+    // const age = 17;
+    const age = new Number(17);
+
+    // const name = '둘리';
+    const name = new String('둘리');
+
+    // const isRobot = false;
+    const isRobot = new Boolean(false);
+
+    // const hani = {name : '하니'};
+    const hani = new Object({name:'하니'});
+
+    //const arrNum = [3, 5, 7];
+    const arrNum = new Array(3, 5, 7);
+
+    // const sumFn = function(x, y){return x + y};
+    const sumFn = new Fucntion('x, y', 'return x + y;')
+
+    // 날짜, 시간 정보는 Date() 생성자함수를 이용해서 활용한다.
+    const today = new Date();
+    console.log(today);
+  </script>
+</body>
+</html>

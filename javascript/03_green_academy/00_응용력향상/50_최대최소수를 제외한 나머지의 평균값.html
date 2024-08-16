@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>응용력향상</title>
+  </head>
+  <body>
+    <h1>50_최대최소수를 제외한 나머지의 평균값</h1>
+    <pre>
+    10개의 수를 입력받아
+    최대수와 최소수를 제외한 나머지의 평균값을 출력하시오.
+
+    단, 소수점 첫째 자리에서 반올림한 정수를 출력한다.
+  </pre
+    >
+
+    <script>
+      // 1단계 - 입력받은 문자, 숫자를 연산 가능한 진자 숫자로 변환
+      const num = prompt(
+        '10개의 정수를 공백으로 구분하여 입력해주세요',
+        '5 4 8 1 2 4 9 3 2 6',
+      );
+      const numArr = num.split(' ');
+
+      // 2단계 - 최대값, 최소값 찾기
+      let max = numArr[0];
+      let min = numArr[0];
+
+      for (let i = 0; i < numArr.length; i++) {
+        if (numArr[i] > max) {
+          max = numArr[i];
+        }
+      }
+
+      for (let i = 0; i < numArr.length; i++) {
+        if (numArr[i] < min) {
+          min = numArr[i];
+        }
+      }
+      console.log(max);
+      console.log(min);
+      // 3단계 - 평균값 구하기
+      // 1)입력받은 배열의 총합 2)총합에서 최대값, 최소값을 제외(뺀다) 3)소수점 첫째 자리에서 반올림한 평균을 구한다. Math.round();
+
+    </script>
+  </body>
+</html>

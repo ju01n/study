@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>타이머함수</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <h1>타이머함수</h1>
+
+    <pre>
+        1. setTimeout(콜백함수, 시간);
+            - 지정한 시간이 경과한 후에 딱 한번만 함수를 실행해 달라고 예약
+            - setTimeout() 함수를 호출하면 예약을 해지할 수 있는 키값을 리턴
+            - clearTimeout(키값) 통해서 예약을 해지할 수 있다.
+
+        2. setInterval(콜백함수, 시간);
+            - 지정한 시간 간겨으로 반복적으로 함수를 실행해 달라고 예약
+            - setInterval() 함수를 호출하면 예약을 해지할 수 있는 키값을 리턴
+            - clearInterval(키값) 통해서 예약을 해지할 수 있다.
+    </pre>
+
+    <hr>
+
+    <h2>1. setTimeout()</h2>
+    <p>
+        <img src="https://bit.ly/36n8RaZ" class="bomb" alt="#">
+    </p>
+    <button class="btnBomb">폭탄해체</button>
+
+
+    <script>
+        const bombKey = setTimeout(function(){
+            const $bomb = document.querySelector('.bomb');
+            $bomb.setAttribute('src', 'https://bit.ly/3gRmoJX');
+        },2000);
+
+        const $btnBomb = document.querySelector('.btnBomb');
+        $btnBomb.addEventListener('click', function(){
+            clearTimeout(bombKey);
+        });
+    </script>
+
+    <hr>
+
+    <h2>2. setInterval()</h2>
+
+    <img style="width:70%;" src="https://bit.ly/3gSK6W3" alt="#">
+    <h2>현재까지 벌은 돈 : <span class="dollar">0</span>달러</h2>
+    <button class="btnStop">그만벌기</button>
+
+
+    <script>
+        const $dollar = document.querySelector('.dollar');
+        let totMoney = 0;
+        let intervalKey = null;
+
+        intervalKey = setInterval(function(){
+            totMoney += 100;
+            $dollar.textContent = totMoney;
+        },1000)
+
+        const $btnStop = document.querySelector('.btnStop');
+        $btnStop.addEventListener('click', function(){
+            if(confirm('그만할까요')){
+                clearInterval(intervalKey);
+                alert('중지완료');
+            }else{
+                alert('돈이 계속 적립니다.');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>응용력향상</title>
+  </head>
+  <body>
+    <h1>배열요소중_최대값과_최소값_찾기</h1>
+
+    <pre>
+        1. 아래의 배열 요소중 최대값을 찾아서 화면에 출력하는 코드를 작성하시오.
+
+        2. 아래의 배열 요소중 최소값을 찾아서 화면에 출력하는 코드를 작성하시오.
+
+            [6, 3, 4, 1, 55, 2, 7]
+    </pre>
+
+    <script>
+      const numArr = [6, 3, 4, 1, 55, 2, 7];
+      // 최댓값
+      let max = numArr[0];
+      for(let i = 0; i < numArr.length; i++){
+        if(numArr[i] > max){
+          max = numArr[i];
+        }
+      }
+
+      let min = numArr[0];
+      for(let i = 0; i < numArr.length; i++){
+        if(numArr[i] < min){
+          min = numArr[i];
+        }
+      }
+
+      document.write(`1. 위 배열요소중 최대값은 ${max}<br>`);
+      document.write(`2. 위 배열요소중 최소값은 ${min}<br>`);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>분기처리</title>
+</head>
+<body>
+  <h1>홈페이지 방문을 환영합니다.</h1>
+  <h2>귀하의 디바이스를 분석해서 분기처리 하겠습니다</h2>
+
+  <script>
+    let device = 'pc';
+    // 사용자 접속 디바이스 분석
+    const userAgent = navigator.userAgent.toLowerCase();
+    document.write(`userAgent = ${userAgent}`)
+
+    // 모바일 브라우저의 userAgent 값에 포함된 키워드 
+    const mobilekeyword = ['iphone','ipod','android','blackberry','windows ce', 'nokia','webos','opera mini','sonyericsson','opera mobi','iemobile','avantgo','bada','blazer','compal','iemobile','iris','lge','windows phone']
+
+    // userAgent 문자열에 배열 키워드 포함 유무 전수조사 후 있으면 device = 'mobile'로 변경
+    for(let i = 0; i < mobilekeyword.length; i++){
+      if(userAgent.indexOf(mobilekeyword[i]) !== -1){
+      device = 'mobile';
+      break;
+    }
+    }
+    // if(userAgent.indexOf(mobilekeyword[0]) !== -1){
+    //   decive = 'mobile';
+    // }
+    // if(userAgent.indexOf(mobilekeyword[1]) !== -1){
+    //   decive = 'mobile';
+    // }
+    // if(userAgent.indexOf(mobilekeyword[2]) !== -1){
+    //   decive = 'mobile';
+    // }
+
+    if(device === 'mobile'){
+      alert('네이버 Mobile로 이동합니다.')
+      location.href = 'http://m.naver.com'
+    }else{
+      alert('네이버 PC로 이동합니다.')
+      location.replace = 'http://www.naver.com'
+    }
+
+
+  </script>
+</body>
+</html>

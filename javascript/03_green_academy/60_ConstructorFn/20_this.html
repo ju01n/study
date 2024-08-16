@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>this 의미</title>
+  </head>
+  <body>
+    <h1>함수 안에서 선언한 함수를 내부함수</h1>
+    <script>
+      // 1. 일반적인 함수에서 this는 window 전역객체를 가리킨다.
+      const normalFn = function () {
+        console.log('1. 일반적인 함수에서 this = ', this); //window (전역변수) - 브라우저 자체
+
+        // 내부함수 - 1
+        function innerFn() {
+          console.log('2. 일반적인 함수 안에 있는 내부함수에서 this = ', this);
+        };
+        innerFn(); //함수 안에서 호출해야함
+
+        const innerArrFn = () => {
+          console.log('3. 일반적인 함수 안에 있는 화살표 내부함수에서 this = ', this);
+        };
+        innerArrFn();
+      }; //표현식 함수
+
+      normalFn();
+
+      // 2. 객체나 생성자함수에서 this는 조금 다르다.
+      function Person(name, age) {
+        this.name = name;
+        this.age = age;
+
+        this.info = function () {
+          // this는 hani 인스턴스를 가리킨다. 
+          document.write(`1. info 메소드 안에서 this.name = ${this.name}<br>`);
+
+          // 생성자함수 메소드 안쪽에서 선언한 내부함수 안에서는 바깥 쪽 this를 인식하지 못함 
+          // 내부함수에서 this는 window를 가리킨다. 따라서 출력되는 값이 없음 
+          (function innerFn(){
+            document.write(`2. innerFn 내부함수 안에서 this.name = ${this.name}<br>`);
+            console.log(`2. innerFn 내부함수 안에서 this = ', this`); //window 
+          })(); // 괄호로 묶으면 '즉시실행'
+
+          // 내부함수에서 this를 인식시키는 전통적인 방법
+          const that = this;
+          (function traditionFn(){
+            document.write(`3. traditionFn 내부함수 안에서 this.name = ${this.name}<br>`);
+            console.log(`3. traditionFn 내부함수 안에서 this = ` , that); //window 
+          })();  
+          // 내부함수에서 this를 인식시키는 최신 방법 
+          // 화살표 내부 함수 안에서의 this는 인스턴스에 매칭된다. 
+          const innerArrFn = () => {
+            document.write(`4. innerArrFn 내부함수 안에서 this.name = ${this.name}<br>`);
+          }
+          innerArrFn();
+        };
+      }
+
+      const hani = new Person('하니', 15);
+      hani.info();
+
+    </script>
+  </body>
+</html>

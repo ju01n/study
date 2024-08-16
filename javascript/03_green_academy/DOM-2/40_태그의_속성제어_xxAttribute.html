@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>태그의 속성제어</title>
+  <style>
+    body{text-align:center;}
+    p{width:450px;height:200px;background:pink;margin:0 auto 15px;display:flex;justify-content:center;align-content:start;color:black;}
+    #love{background-image:url(https://bit.ly/3XeSrH4);background-size:contain;}
+    .stroke{border:5px solid #000;border-radius:10px;}
+    button{padding:10px 20px;}
+  </style>
+</head>
+<body>
+  <h1>태그의 속성제어</h1>
+
+  <p id="love" class="" title="Javascript">즐거운 자바스크립트 ~!</p>
+
+  <button>속성변환</button>
+
+  <script>
+    const $p = document.getElementById('love');
+    const $btn = document.querySelector('button');
+
+    $btn.addEventListener('click',function(){
+      // $p.setAttribute(무엇을, 어떻게) - 값을 세팅하겠다.
+      $p.setAttribute('style', 'color:blue');
+
+      // .stroke 클래스 추가
+      $p.setAttribute('class', 'stroke')
+
+      // 특정 속성값을 가져오기
+      console.log($p.getAttribute('title'));
+
+      // 특정 속성을 가지고 있는지 확인 -> boolean
+      if($p.hasAttribute('id')){
+        alert('p태그는 id 속성을 가지고 있습니다.')
+      }
+
+      // 태그의 속성 제거
+      $p.removeAttribute('id');
+    })
+
+
+  </script>
+</body>
+</html>

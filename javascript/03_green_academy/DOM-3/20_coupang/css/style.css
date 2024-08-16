@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+.slides{position: relative; width: 1120px; height: 450px; border: 1px solid #000; margin: 0 auto;overflow:hidden;}
+
+/* 인디케이터 */
+.slides > .slides-pagination{ position: absolute; right: 90px; top: 50%; border: 1px solid #eee; margin-top: -150px; }
+.slides> .slides-pagination > li{ width: 180px; }
+.slides> .slides-pagination> li:nth-child(1){background-image: url(./../images/indicator-1.jpg);}
+.slides> .slides-pagination> li:nth-child(2){background-image: url(./../images/indicator-2.jpg);}
+.slides> .slides-pagination> li:nth-child(3){background-image: url(./../images/indicator-3.jpg);}
+.slides> .slides-pagination> li:nth-child(4){background-image: url(./../images/indicator-4.png);}
+.slides> .slides-pagination> li:nth-child(5){background-image: url(./../images/indicator-5.png);}
+.slides > .slides-pagination > li > a{ display: block; height: 60px; text-indent: -9999px; }
+.slides > .slides-pagination > li:hover{border:2px solid skyblue;box-sizing:border-box;}
+.slides > .slides-pagination > li.on{border:2px solid skyblue;box-sizing:border-box;}
+
+/* 슬라이드 */
+.slides > .slides-container{display:flex;width:calc(1120px * 5);position:absolute;top:0;left:0;/* 첫번째 슬라이드              -1120*0        */
+  left: -1120px;/* 두번째 슬라이드        -1120*1        */
+  left: -2240px;/* 세번째 슬라이드        -1120*2        */
+  left: -3360px;/* 네번째 슬라이드        -1120*3        */
+  left: -4480px;/* 다섯번째 슬라이드      -1120*4        */}
+.slides > .slides-container > p{width:1120px;background-size:cover;background-repeat:no-repeat;background-position:center center;}
+.slides > .slides-container > p:nth-child(1){background-image:url(./../images/slide-1.jpg);}
+.slides > .slides-container > p:nth-child(2){background-image:url(./../images/slide-2.jpg);}
+.slides > .slides-container > p:nth-child(3){background-image:url(./../images/slide-3.jpg);}
+.slides > .slides-container > p:nth-child(4){background-image:url(./../images/slide-4.png);}
+.slides > .slides-container > p:nth-child(5){background-image:url(./../images/slide-5.jpg);}
+.slides > .slides-container > p > a{display:block;height:450px;text-indent:-9999px;}

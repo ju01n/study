@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>preventDefalut</title>
+</head>
+<body>
+  <h1>기본이벤트 작동 방지</h1>
+  <a href="http://www.naver.com">네이버 바로가기</a>
+
+  <script>
+    const $a = document.querySelector('a');
+    $a.addEventListener('click', function(evt){
+      evt.preventDefault(); // 기본 기능 작동 방지
+      if(confirm('정말 네이버로 이동하시겠습니까?')){
+        alert('안녕히가세요');
+      }else{
+        evt.preventDefault();
+        alert('네이버로 이동하지 않습니다.');
+      }
+    });
+  </script>
+</body>
+</html>

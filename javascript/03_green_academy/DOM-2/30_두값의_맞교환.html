@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>30_두값의_맞교환</title>
+    <style>
+      body {
+        text-align: center;
+      }
+
+      .box {
+        position: relative;
+        width: 400px;
+        height: 250px;
+        margin: 0 auto;
+        border-radius: 10px;
+        border: 1px solid #000;
+      }
+
+      .box > p {
+        position: absolute;
+        left: 50%;
+        top: 20px;
+        width: 150px;
+        height: 150px;
+        font-size: 50px;
+        line-height: 150px;
+        border: 1px solid #000;
+        border-radius: 10px;
+      }
+
+      .box > p.a {
+        margin-left: -170px;
+        background-color: yellow;
+      }
+
+      .box > p.b {
+        margin-left: 20px;
+        background-color: pink;
+      }
+
+      button {
+        margin-top: 270px;
+        padding: 10px 20px;
+        font-size: 24px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>두 값의 맞교환</h1>
+    <div class="box">
+      <p class="a">5</p>
+      <p class="b">7</p>
+      <button>맞교환</button>
+    </div>
+
+    <script>
+      const $a = document.querySelector('.a');
+      const $b = document.querySelector('.b');
+      const $button = document.querySelector('button');
+
+
+      $button.addEventListener('click', function(){
+        let aVal = $a.textContent;
+        let bVal = $b.textContent;
+
+        // 배열 비구조 할당 활용했을 때
+        [aVal, bVal] = [bVal, aVal]; // 자바스크립트만의 특권..! 쉽다~~ 
+        $a.textContent = aVal;
+        $b.textContent = bVal;
+
+        // box의 배경색 조작
+        const bgColor = ['green', 'brown', 'orange', 'purple', 'beige', 'pink', 'red', 'skyblue'];
+        const $box = document.querySelector('.box');
+        const nowIdx = Math.floor(Math.random() * bgColor.length) // 0 ~ 5 까지 랜덤하게? -> 베열이 추가된다면..?
+        console.log(nowIdx);
+        $box.style.backgroundColor = bgColor[nowIdx];
+      })
+    </script>
+  </body>
+</html>

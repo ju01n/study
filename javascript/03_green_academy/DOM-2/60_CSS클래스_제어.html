@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 클래스 제어</title>
+  <style>
+    body{text-align:center;}
+    #light{width:240px;height:220px;margin:50px auto;background-image:url(./../images/bulb_off.gif);background-repeat:no-repeat;background-position:center 10px;}
+    #light.on{background-image:url(./../images/bulb_on.gif);}
+    button{margin-top:220px;padding:5px 7px;}
+  </style>
+</head>
+<body>
+  <h1>동적으로 class 추가, 삭제</h1>
+
+  <p id="light" class="">
+    <button class="on">켜기</button>
+    <button class="off">끄기</button>
+    <button class="toggle">토글</button>
+  </p>
+
+  <script>
+    const $light = document.getElementById('light');
+
+    const $btnOn = document.querySelector('.on');
+    const $btnOff = document.querySelector('.off');
+    const $btnToggle = document.querySelector('.toggle');
+
+    $btnOn.addEventListener('click', function(){
+      $light.classList.add('on');
+    });
+    $btnOff.addEventListener('click', function(){
+      $light.classList.remove('on');
+    });
+    $btnToggle.addEventListener('click', function(){
+      $light.classList.toggle('on');
+    })
+  </script>
+</body>
+</html>

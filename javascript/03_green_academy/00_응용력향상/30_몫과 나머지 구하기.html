@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>응용력향상</title>
+  </head>
+  <body>
+    <h1>몫과 나머지 구하기</h1>
+
+    <pre>
+    두 개의 수 a, b를 입력받아
+    a를 b로 나눈 몫과 나머지를 출력하는 프로그램을 작성하시오.
+    (단, 각 수는 1이상 10000이하의 정수이다.)
+
+    출력형식
+      몫:33, 나머지:1
+  </pre>
+
+    <h2 class="result">?</h2>
+    <script>
+      // const a = parseInt(prompt('a를 입력하세요'));
+      // const b = parseInt(prompt('b를 입력하세요'));
+
+      // const quotient = Math.floor(a / b);
+      // const remainder = a % b;
+
+      // alert(`몫 : ${quotient}, 나머지 : ${remainder}`)
+
+      let a = parseInt(prompt('1이상 10000 이하의 정수를 입력해 주세요'));
+
+      while (a < 1 || a > 10000) {
+        a = parseInt(prompt('1이상 10000 이하의 정수를 입력해 주세요'));
+      }
+
+      let b = parseInt(prompt('1이상 10000 이하의 정수를 입력해 주세요'));
+
+      while (b < 1 || b > 10000) {
+        b = parseInt(prompt('1이상 10000 이하의 정수를 입력해 주세요'));}
+
+      console.log(`몫:${Math.floor(a / b)}, 나머지:${a % b}`);
+
+      document.querySelector('h2.result').textContent = `몫:${Math.floor(a / b,)}, 나머지:${a % b}`;
+    </script>
+  </body>
+</html>
