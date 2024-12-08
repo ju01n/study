@@ -1,0 +1,24 @@
+/* menu */
+.menu{display:flex;}
+/* IE대응 불가라 width값으로 조정 */
+.menu-item{/*flex-grow:1*/width:25%;background:gold;transition:.5s}
+.menu-item:hover{/*flex-grow:1.5*/width:35%;background:crimson}
+.menu-link{display:block;padding:1em;font-size:1.2rem;font-weight:bold;color:#555;text-align:center;text-decoration:none}
+.menu-link:hover{color:#fff}
+
+/* search */
+.search-form{display:flex;height:40px}
+.search-form input[type='search']{flex:1;margin-right:10px;padding:0 10px;border:0;font-size:1rem;border-radius:3em;box-sizing:border-box}
+.search-form input[type='submit']{width:4em;border:0;font-size:1rem;border-radius:3em}
+
+/* bullet list */
+.info-list-item{display:flex;margin:0.5em 0}
+.info-list-item:before{margin-right:0.5em;content:'✔'}
+
+/* message */
+.user-item{display:flex;margin-bottom:1.5rem}
+.user-photo{flex-shrink:0;width:50px;height:50px;margin-right:0.5em;border:2px solid #333;background-color:gold;background-repeat:no-repeat;background-position:center;background-size:150%;border-radius:50%}
+
+/* friend list */
+.friend-item{align-items:center}
+.user-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
