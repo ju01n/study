@@ -1,5 +1,5 @@
 /* menu */
-.menu{display:flex;}
+.menu{display:flex}
 /* IE대응 불가라 width값으로 조정 */
 .menu-item{/*flex-grow:1*/width:25%;background:gold;transition:.5s}
 .menu-item:hover{/*flex-grow:1.5*/width:35%;background:crimson}
